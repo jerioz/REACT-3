@@ -1,7 +1,7 @@
 
 import './App.css'
 import Header from './components/header/Header'
-import Home from './components/home/Home';
+
 import { Contact } from './views/contact/Contact';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomeView } from './views/home/HomeView';
