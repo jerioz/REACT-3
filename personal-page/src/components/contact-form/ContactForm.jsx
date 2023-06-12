@@ -49,8 +49,9 @@ const clearState = () => {
       
   return (
     <>
-    <h1>Contact</h1>
-    <form onSubmit={handleSubmit} className='form'>
+    <h1 className='form__title'>Contact</h1>
+    <div>
+    <form onSubmit={handleSubmit} className='form__formulario'>
         <input
         type="text"
         placeholder="name"
@@ -69,7 +70,8 @@ const clearState = () => {
         />
         <button type="submit" disabled={btnDisabled} className='form__button'>Submit</button>
         <p>{message}</p>
-        </form>
+    </form>
+    </div>
     </>
   )
 }
