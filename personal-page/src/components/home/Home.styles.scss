@@ -1,0 +1,16 @@
+.home {
+    &__logo-listPhoto {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh;
+        }
+    
+    &__logo-photo {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        }
+        
+}

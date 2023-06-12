@@ -1,0 +1,17 @@
+.about {
+    &__text {
+    text-align: center;
+  }
+    &__title {
+    font-size: 40px;
+    margin: 0;
+  }
+  
+    &__description {
+    font-size: 24px;
+  }
+  &__list {
+    list-style: none;
+    font-size: 24px;
+  }
+}
