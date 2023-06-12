@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
 import './ContactForm.styles.scss'
+import { useNavigate } from "react-router-dom";
 
 const ContactForm = () => {
+    let navigate = useNavigate();
     const [data, setData] = useState({
         name: "",
         email: "",
@@ -39,6 +41,10 @@ const clearState = () => {
         const jsonData = JSON.stringify(data)
         localStorage.setItem('data', jsonData)
         clearState()
+
+        setTimeout(() => {
+            navigate("/");
+            }, 1000);
     };   
       
   return (
