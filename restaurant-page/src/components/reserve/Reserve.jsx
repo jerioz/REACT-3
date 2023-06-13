@@ -7,19 +7,21 @@ const Reserve = () => {
     const [data, setData] = useState({
         name: "",
         date: "",
+        time: "",
     });
 
 const initialState = {
         name: "",
         date: "",
+        time: "",
     };
         
 const clearState = () => {
         setData({ ...initialState });
     };
     const handleInputChange = (event) => {
-        console.log(event.target.name)
-        console.log(event.target.value)
+        // console.log(event.target.name)
+        // console.log(event.target.value)
         setData({
             ...data,
             [event.target.name]: event.target.value,
@@ -27,8 +29,7 @@ const clearState = () => {
     };
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(`sending data… ${data.name} ${data.date}`);
-        console.log(data)
+        console.log(`sending data… ${data.name} ${data.date} ${data.time} `);
         const jsonData = JSON.stringify(data)
         localStorage.setItem('data', jsonData)
         clearState()
@@ -50,6 +51,7 @@ const clearState = () => {
         onChange={handleInputChange}
         name="name"
         className='reserve__input'
+        required
         />
         <input
         type="date"
@@ -59,6 +61,17 @@ const clearState = () => {
         onChange={handleInputChange}
         name="date"
         className='reserve__input'
+        required
+        />
+        <input
+        type="time"
+        value={data.time}
+        min="19:00"
+        max="23:00"
+        onChange={handleInputChange}
+        name="time"
+        className='reserve__input'
+        required
         />
         <button type="submit" className='reserve__button'>Submit</button>
     </form>
