@@ -30,8 +30,9 @@ const clearState = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(`sending data… ${data.name} ${data.date} ${data.time} `);
-        const jsonData = JSON.stringify(data)
-        localStorage.setItem('data', jsonData)
+        let dataArray = JSON.parse(localStorage.getItem('reserve')) || [];
+        dataArray.push(data)
+        localStorage.setItem('reserve', JSON.stringify(dataArray))
         clearState()
 
         setTimeout(() => {
