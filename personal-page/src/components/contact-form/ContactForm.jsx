@@ -35,6 +35,16 @@ const clearState = () => {
             [event.target.name]: event.target.value,
         });
     };
+    
+    const validateEmail = (email) => {
+        const emailRegex = /[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}/;
+        return emailRegex.test(email);
+      };
+    
+      const handleValidation = () => {
+        setIsValid(validateEmail(email));
+      };
+
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(`sending data… ${data.name} ${data.email}`);
@@ -68,7 +78,7 @@ const clearState = () => {
         name="email"
         className='form__input'
         />
-        <button type="submit" disabled={btnDisabled} className='form__button'>Submit</button>
+        <button type="submit" disabled={btnDisabled} className='form__button' onClick={handleValidation}>Submit</button>
         <p>{message}</p>
     </form>
     </div>
